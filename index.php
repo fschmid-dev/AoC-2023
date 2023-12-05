@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 echo('<style>body { font-family: monospace; font-size: 16px; }</style>');
 
-function getInputForDay($day = null, $type = 'array') {
+function getInputForDay($day = null, $type = 'array'): array|string {
     if (!$day) {
         $day = $_GET['day'];
     }
