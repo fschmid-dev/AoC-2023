@@ -61,11 +61,14 @@ unset($from, $to, $i, $iMax, $input);
 
 $lowestLocation = PHP_INT_MAX;
 
+ppr($seedRanges);
+die();
+$seedCount = 0;
 foreach ($seedRanges as $seedRange) {
     for ($i = $seedRange['start'], $iMax = $seedRange['start'] + $seedRange['range']; $i < $iMax; $i++) {
-        if ($isTest) {
-            echo('Seed:' . $i . '<br>');
-        }
+        // echo('Seed:' . $i . '<br>');
+        $seedCount++;
+        /*
         $value = $i;
         foreach ($steps as $step) {
             $value = getMappingValue($step, $value);
@@ -81,8 +84,11 @@ foreach ($seedRanges as $seedRange) {
         if ($isTest) {
             echo('<br>');
         }
+        */
     }
 }
+
+echo('Seed count: ' . $seedCount . '<br>');
 
 echo('lowest location: ' . $lowestLocation);
 
