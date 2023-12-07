@@ -5,7 +5,8 @@ error_reporting(E_ALL);
 
 echo('<style>body { font-family: monospace; font-size: 16px; }</style>');
 
-function getInputForDay($day = null, $type = 'array'): array|string {
+function getInputForDay($day = null, $type = 'array'): array|string
+{
     if (!$day) {
         $day = $_GET['day'];
     }
@@ -16,7 +17,7 @@ function getInputForDay($day = null, $type = 'array'): array|string {
     }
 
     if ($type === 'array') {
-        return file ($input);
+        return file($input);
     }
 
     if ($type === 'string') {
@@ -24,9 +25,18 @@ function getInputForDay($day = null, $type = 'array'): array|string {
     }
 }
 
-function ppr(...$data) {
+function ppr(...$data): void
+{
     foreach ($data as $item) {
-        echo('<pre>'.print_r($item, true).'</pre>');
+        echo('<pre>' . print_r($item, true) . '</pre>');
+    }
+}
+
+function echoIfTest($data): void
+{
+    global $isTest;
+    if ($isTest) {
+        echo($data);
     }
 }
 
