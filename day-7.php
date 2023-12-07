@@ -57,13 +57,9 @@ echo('Part 2<br>');
 $sortedHands = $hands;
 usort($sortedHands, 'compareHands2');
 
-file_put_contents('card_list.csv', '');
 $totalWinnings = 0;
 for ($i = 0; $i < $handsCount; $i++) {
     $hand = $sortedHands[$i];
-
-    echo('Hand: ' . $hand['hand'] . ' Type: ' . $types[$hand['type2']] . '<br>');
-    file_put_contents('card_list.csv', $hand['hand'] . ';' . $types[$hand['type2']] . PHP_EOL, FILE_APPEND);
 
     $rank = $i + 1;
     echoIfTest('(' . $hand['hand'] . ') ' . $hand['bid'] . ' * ' . $rank . '<br>');
